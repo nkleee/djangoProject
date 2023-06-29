@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "photo.apps.PhotoConfig",
     "blog.apps.BlogConfig",
     "bookmark.apps.BookmarkConfig",
     "django.contrib.admin",
@@ -133,5 +134,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-DISQUS_SHORTNAME = 'pydjango-web-programming'
-DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000/'
+DISQUS_SHORTNAME = 'django-wpg5vrrtef'
+DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000'
