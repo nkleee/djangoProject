@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "widget_tweaks",
     "photo.apps.PhotoConfig",
     "blog.apps.BlogConfig",
     "bookmark.apps.BookmarkConfig",
@@ -136,3 +137,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DISQUS_SHORTNAME = 'django-wpg5vrrtef'
 DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000'
+
+LOGIN_REDIRECT_URL = '/'
