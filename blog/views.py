@@ -6,6 +6,11 @@ from django.views.generic import ListView, DetailView, ArchiveIndexView, YearArc
 
 from blog.forms import PostSearchForm
 from blog.models import Post
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView, ArchiveIndexView, YearArchiveView, MonthArchiveView, \
+    DayArchiveView, TodayArchiveView, TemplateView, FormView, CreateView, UpdateView, DeleteView
+
+from mysite.views import OwnerOnlyMixin
 
 
 # Create your views here.
@@ -90,3 +95,18 @@ class SearchFormView(FormView):
         context['object_list'] = post_list
 
         return render(self.request, self.template_name, context)
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    pass
+
+
+class PostChangeLV(LoginRequiredMixin, ListView):
+    pass
+
+
+class PostUpdateView(OwnerOnlyMixin, UpdateView):
+    pass
+
+
+class PostDeleteView(OwnerOnlyMixin, DeleteView):
+    pass
